@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, MenuController } from 'ionic-angular';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -14,10 +14,14 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController,public menu:MenuController) { }
 
   login() {
     this.navCtrl.push('LoginPage');
+  }
+
+  ionViewDidEnter() {
+    this.menu.swipeEnable(false, 'menu1');
   }
 
   signup() {
